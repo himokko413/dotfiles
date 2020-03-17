@@ -1,0 +1,85 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+
+
+conky.config = {
+    alignment = 'top_right',
+    background = false,
+    border_width = 0.5,
+    cpu_avg_samples = 4,
+    default_color = 'black',
+    default_outline_color = 'grey',
+    default_shade_color = 'black',
+    color0 = 'E85598',
+    color1 = 'E85A55',
+    color2 = '55E85A',
+    color3 = '74A1A8',
+    color4 = 'A86C88',
+    color5 = 'placeholder',
+    color6 = 'placeholder',
+    color7 = 'placeholder',
+    color8 = 'placeholder',
+    color9 = 'placeholder',
+    draw_borders = true,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'JetBrains Mono:size=10',
+    gap_x = 30,
+    gap_y = 30,
+    minimum_height = 5,
+    minimum_width = 5,
+    maximum_width = 270,
+    net_avg_samples = 2,
+    double_buffer = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_colour = 'FCBED5',
+    own_window_class = 'Conky',
+    own_window_argb_visual = true,
+    own_window_type = 'desktop',
+    own_window_transparent = false,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_argb_value = 255,
+    stippled_borders = 0,
+    update_interval = 2,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = true,
+	use_xft = true,
+	xinerama_head = 0
+}
+
+conky.text = [[
+${image ~/.sn_OS_icon.png -p 160,25 -s 80x80 -f 86400}
+${font Behtix:bold:size=10}
+${exec TZ='America/Chicago' date +%T}
+${exec whoami}${color0}@sanctuary-xl${color}
+${exec hostnamectl | grep System | cut -c21-40 | tr '[:upper:]' '[:lower:]'}
+${exec hostnamectl | grep Architecture | cut -c7-30 | tr '[:upper:]' '[:lower:]'}
+${exec hostnamectl | grep Kernel | cut -c13-32 | tr '[:upper:]' '[:lower:]'}
+
+
+${font Behtix:bold:size=10}${color1}performance ${hr 2}$font
+${offset 15}${color1}uptime ${alignr}$color $uptime
+${offset 15}${color1}cpu ${alignr}$color${cpu}%
+${offset 15}$color${cpubar cpu0 6, 253}
+${offset 15}${color1}proc $color$running_processes${color1}/$color$processes${color1}$color${alignr}${color1}temp $color${acpitemp}°
+${offset 15}${color1}ram${alignr}$color $mem
+${offset 15}${color}${membar 6, 253} 
+${font Behtix:bold:size=10}${color0}proc ${hr 2}
+${offset 15}${font JetBrains Mono:regular:size=8}${color0}name${alignr}pid   cpu%   mem%
+${offset 15}${color}${top name 1} ${alignr}${top pid 1} ${top cpu 1} ${top mem 1}
+${offset 15}${color}${top name 2} ${alignr}${top pid 2} ${top cpu 2} ${top mem 2}
+${offset 15}${color}${top name 3} ${alignr}${top pid 3} ${top cpu 3} ${top mem 3}
+${offset 15}${color}${top name 4} ${alignr}${top pid 4} ${top cpu 4} ${top mem 4}
+${font Behtix:bold:size=10}${color3}wifi ${hr 2}
+${offset 15}${color3}${font}${wireless_essid wlp5s0} ${alignr}${color}${wireless_link_qual_perc wlp5s0}% 
+${offset 15}${color}${addr wlp5s0}
+${offset 15}${font}${color3}d $color${totaldown wlp5s0} ${alignr}${color3}u $color${totalup wlp5s0}
+${font Behtix:bold:size=10}${color4}now ${hr 2}$color
+${font}${exec wego --aat-monochrome -d 1 | head -n 7 | tail -n 6}
+]]
