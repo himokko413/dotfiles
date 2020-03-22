@@ -8,4 +8,5 @@ xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorDisplay
 xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-A-0/workspace0/last-image --set ~/.nightRight.gif
 cp ~/.conkyViewport ~/.conkyrc
 cp ~/.config/kitty/viewportOS.conf ~/.config/kitty/kitty.conf
+echo 'rofi.theme: /home/lucina/.config/rofi/viewport.rasi' > ~/.config/rofi/config
 kitty @ set-colors -a ~/.config/kitty/kitty.conf

@@ -8,4 +8,5 @@ xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorDisplay
 xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-A-0/workspace0/last-image --set ~/.dayRight.png
 cp ~/.conkySanctuary ~/.conkyrc
 cp ~/.config/kitty/sanctuaryOS.conf ~/.config/kitty/kitty.conf
+echo 'rofi.theme: /home/lucina/.config/rofi/sanctuary.rasi' > ~/.config/rofi/config
 kitty @ set-colors -a ~/.config/kitty/kitty.conf
