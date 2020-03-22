@@ -57,7 +57,7 @@ conky.text = [[
 ${image ~/.sn_OS_icon.png -p 160,25 -s 80x80 -f 86400}
 ${font Behtix:bold:size=10}
 ${exec TZ='America/Chicago' date +%T}
-${exec whoami}${color0}@sanctuary-xl${color}
+${exec whoami}${color0}@${nodename}${color}
 ${exec hostnamectl | grep System | cut -c21-40 | tr '[:upper:]' '[:lower:]'}
 ${exec hostnamectl | grep Architecture | cut -c7-30 | tr '[:upper:]' '[:lower:]'}
 ${exec hostnamectl | grep Kernel | cut -c13-32 | tr '[:upper:]' '[:lower:]'}
